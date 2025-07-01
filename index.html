@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Owen - By Osama </title>
+
+  <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+
+  <style>
+    /* تعيين الجسم والـ HTML لملء الشاشة */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      font-family: "fira", sans-serif;
+    }
+
+    /* الحاوية الخاصة بالبوت تأخذ كامل الشاشة */
+    #webchat {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      max-width: 100vw;
+      max-height: 100vh;
+      box-sizing: border-box;
+      background-color: white;
+      z-index: 9999;
+    }
+
+    /* إخفاء زر الفاب */
+    #webchat .bpFab {
+      display: none;
+    }
+
+    /* جعل واجهة البوت تملأ الحاوية */
+    #webchat .bpWebchat {
+      position: unset !important;
+      width: 100% !important;
+      height: 100% !important;
+      max-height: 100% !important;
+      max-width: 100% !important;
+      border-radius: 0 !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="webchat"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      window.botpress.on("webchat:ready", () => {
+        window.botpress.open();
+      });
+
+      window.botpress.init({
+        botId: "ac8fba90-d124-49a7-9d5a-914f748f821a",
+        configuration: {
+          version: "v1",
+          botName: "Owen",
+          botAvatar: "https://files.bpcontent.cloud/2025/06/26/11/20250626113857-WISG4IMM.png",
+          website: {
+            title: "https://owen-arch.github.io/O/",
+            link: "https://owen-arch.github.io/O/"
+          },
+          email: {
+            title: "00owen.po@gmail.com",
+            link: "mailto:00owen.po@gmail.com"
+          },
+          phone: {},
+          termsOfService: {},
+          privacyPolicy: {},
+          color: "#DC143C",
+          variant: "solid",
+          headerVariant: "glass",
+          themeMode: "light",
+          fontFamily: "fira",
+          radius: 2,
+          feedbackEnabled: false,
+          footer: "[Owen](https://owen-arch.github.io/O/)",
+          allowFileUpload: true
+        },
+        clientId: "21030871-db4b-4c12-ac34-330dff280174",
+        selector: "#webchat"
+      });
+    });
+  </script>
+
+</body>
+</html>
